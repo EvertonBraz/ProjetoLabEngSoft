@@ -9,7 +9,7 @@
 <body>
 	<div align="center"><h2><i>Login</i></h2></div>
 	<div align="center">
-		<form>
+		<form action="./login" method="POST">
 			<table>
 				<tr>
 					<td>Login:</td>
