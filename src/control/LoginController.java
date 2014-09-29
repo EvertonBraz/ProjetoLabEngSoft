@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,14 +40,14 @@ public class LoginController extends HttpServlet {
 	    
 	    if(pessoa != null){
 	    	if(pessoa.getSenha().equals(senha)){
-	    		ses.setAttribute("PESSOA", pessoa.getNome());
+	    		ses.setAttribute("PESSOA", pessoa.getLogin());
 	    	}
 	    } else {
 	    	ses.setAttribute("PESSOA", "Nenhum usuário encontrado");
 	    }
 	    
 	    try {
-			res.sendRedirect("./resposta.jsp");
+			res.sendRedirect("./view/menu.jsp");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

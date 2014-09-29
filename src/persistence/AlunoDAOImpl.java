@@ -74,35 +74,33 @@ public class AlunoDAOImpl implements AlunoDAO {
 	}
 
 	@Override
-	public List<Aluno> pesquisarPorRa(int ra) {
-		String sql = "select * from tblAlunos where ra like ?";
-		List<Aluno> listaAlunos = new ArrayList<Aluno>();
+	public Aluno pesquisarPorRa(int ra) {
+		String sql = "select * from tblAlunos where ra = ?";
+		Aluno aluno = new Aluno();
 		try {
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
-			ps.setString(1, "%" + ra + "%");
+			ps.setInt(1, ra);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()){
-				Aluno aluno = new Aluno();
-				aluno.setRa(rs.getInt("ra"));
-				aluno.setNome(rs.getString("nome"));
-				aluno.setDataNascimento(rs.getDate("dataNascimento"));
-				aluno.setSexo(rs.getInt("sexo"));
-				aluno.setCpf(rs.getString("cpf"));
-				aluno.setLogradouro(rs.getString("logradouro"));
-				aluno.setNumero(rs.getString("numero"));
-				aluno.setBairro(rs.getString("bairro"));
-				aluno.setCidade(rs.getString("cidade"));
-				aluno.setEstado(rs.getString("estado"));
-				aluno.setTelefone(rs.getString("telefone"));
-				aluno.setCelular(rs.getString("celular"));
-				aluno.setEmail(rs.getString("email"));
-				listaAlunos.add(aluno);
-			}
+			rs.first();
+			aluno.setRa(rs.getInt("ra"));
+			aluno.setNome(rs.getString("nome"));
+			aluno.setDataNascimento(rs.getDate("dataNascimento"));
+			aluno.setSexo(rs.getInt("sexo"));
+			aluno.setCpf(rs.getString("cpf"));
+			aluno.setLogradouro(rs.getString("logradouro"));
+			aluno.setNumero(rs.getString("numero"));
+			aluno.setBairro(rs.getString("bairro"));
+			aluno.setCidade(rs.getString("cidade"));
+			aluno.setEstado(rs.getString("estado"));
+			aluno.setTelefone(rs.getString("telefone"));
+			aluno.setCelular(rs.getString("celular"));
+			aluno.setEmail(rs.getString("email"));
+			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Não foi possível pesquisar o aluno!", "Pesquisa de Alunos", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
-		return listaAlunos;
+		return aluno;
 	}
 
 	@Override
@@ -138,15 +136,14 @@ public class AlunoDAOImpl implements AlunoDAO {
 	}
 		
 	@Override
-	public List<Aluno> pesquisarPorCpf(String cpf) {
+	public Aluno pesquisarPorCpf(String cpf) {
 		String sql = "select * from tblAlunos where cpf like ?";
-		List<Aluno> listaAlunos = new ArrayList<Aluno>();
+		Aluno aluno = new Aluno();
 		try {
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
 			ps.setString(1, "%" + cpf + "%");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
-				Aluno aluno = new Aluno();
 				aluno.setRa(rs.getInt("ra"));
 				aluno.setNome(rs.getString("nome"));
 				aluno.setDataNascimento(rs.getDate("dataNascimento"));
@@ -160,13 +157,12 @@ public class AlunoDAOImpl implements AlunoDAO {
 				aluno.setTelefone(rs.getString("telefone"));
 				aluno.setCelular(rs.getString("celular"));
 				aluno.setEmail(rs.getString("email"));
-				listaAlunos.add(aluno);
 			}
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Não foi possível pesquisar o aluno!", "Pesquisa de Alunos", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
-		return listaAlunos;
+		return aluno;
 	}	
 
 	@Override

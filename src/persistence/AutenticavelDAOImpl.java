@@ -17,14 +17,13 @@ public class AutenticavelDAOImpl implements Autenticavel {
 	
 	@Override
 	public Pessoa autenticar(String login) {
-		String sql = "select * from tblAlunos where login like ?";
+		String sql = "select * from tblUsuarios where login like ?";
 		Pessoa pessoa = new Pessoa();
 		try {
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
 			ps.setString(1, login);
 			ResultSet rs = ps.executeQuery();
 			if(rs.first()){
-				pessoa.setNome(rs.getString("nome"));
 				pessoa.setLogin(rs.getString("login"));
 				pessoa.setSenha(rs.getString("senha"));
 			}
