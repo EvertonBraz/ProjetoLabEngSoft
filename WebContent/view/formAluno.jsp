@@ -11,11 +11,11 @@
 </head>
 <body>
 	<% 
-	Aluno aluno = new Aluno();
-	if(aluno != null)
-		aluno = (Aluno)session.getAttribute("ALUNO"); 
-	else
-		aluno = null;
+	Aluno aluno = (Aluno)session.getAttribute("ALUNO");
+	if(aluno == null)
+		aluno = new Aluno();
+		//aluno.setNome("");
+		
 	%>
 
 	<div align="center">

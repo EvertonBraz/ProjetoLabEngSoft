@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Lista de Alunose</title>
+<title>Lista de Alunos</title>
 </head>
 <body>
 	<% List<Aluno> listaAluno = new ArrayList<Aluno>();
@@ -17,7 +17,7 @@
 	   listaAluno = dao.listar();
 	%>
 	<div align="center">
-		<h1>Lita de Alunos</h1>
+		<h1>Lista de Alunos</h1>
 	</div>
 	<div align="center">
 		<table border="0">
@@ -30,6 +30,7 @@
 			</tr>
 			<% } %>
 		</table>
+		<p><a href="formAluno.jsp">Novo aluno</p>
 	</div>
 </body>
 </html>
