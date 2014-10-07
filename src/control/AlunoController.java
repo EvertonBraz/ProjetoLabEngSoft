@@ -1,6 +1,9 @@
 package control;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,27 +34,67 @@ public class AlunoController extends HttpServlet {
 			Aluno aluno = dao.pesquisarPorRa(ra);
 			
 			if(aluno != null){
-				//req.setAttribute("ALUNO", aluno);
-				HttpSession ses = req.getSession();
-				ses.setAttribute("ALUNO", aluno);
+				req.setAttribute("ALUNO", aluno);
 			}
 			else{
-				req.setAttribute("MSG", "O animal com o id " + ra + " não foi encontrado");
+				req.setAttribute("MSG", "O aluno com o id " + ra + " não foi encontrado");
 			}
 		}
-		//RequestDispatcher rd = req.getRequestDispatcher("./formAluno.jsp");
-		//rd.include( req, res );
+		RequestDispatcher rd = req.getRequestDispatcher("./view/formAluno.jsp");
+		rd.include( req, res );
 		
-		try {
-			res.sendRedirect("./view/formAluno.jsp");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String funcao = req.getParameter("btnSalvar");
+		if(funcao.equals("salvar")){
+			Aluno aluno = new Aluno();
+			aluno.setRa(Integer.parseInt(req.getParameter("txtRA")));
+			aluno.setNome(req.getParameter("txtNome"));
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date data = null;
+			try {
+				data = sdf.parse(req.getParameter("txtDataNasc"));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			aluno.setDataNascimento(data);
+			String sexo = req.getParameter("cbSexo");
+			if(sexo.equals("Masculino"))
+				aluno.setSexo(1);
+			else
+				aluno.setSexo(2);
+			aluno.setCpf(req.getParameter("txtCpf"));
+			aluno.setLogradouro(req.getParameter("txtLogradouro"));
+			aluno.setNumero(req.getParameter("txtNumero"));
+			aluno.setCep(req.getParameter("txtCep"));
+			aluno.setBairro(req.getParameter("txtBairro"));
+			aluno.setCidade(req.getParameter("txtCidade"));
+			aluno.setEstado(req.getParameter("cbEstado"));
+			aluno.setTelefone(req.getParameter("txtTelefone"));
+			aluno.setCelular(req.getParameter("txtCelular"));
+			aluno.setEmail(req.getParameter("txtEmail"));
+			
+			String msg = aluno.getRa() + "\n" +
+			aluno.getNome() + "\n" +
+			aluno.getDataNascimento() + "\n" +
+			aluno.getSexo() + "\n" +
+			aluno.getCpf() + "\n" +
+			aluno.getLogradouro() + "\n" +
+			aluno.getCep() + "\n" +
+			aluno.getNumero() + "\n" +
+			aluno.getBairro() + "\n" +
+			aluno.getCidade() + "\n" +
+			aluno.getEstado() + "\n" +
+			aluno.getTelefone() + "\n" +
+			aluno.getCelular() + "\n" +
+			aluno.getEmail() + "\n";
+			JOptionPane.showMessageDialog(null, msg);
+			
+			AlunoDAO alunoDAO = new AlunoDAOImpl();
+			alunoDAO.adicionar(aluno);
+		}
 	}
 
 }

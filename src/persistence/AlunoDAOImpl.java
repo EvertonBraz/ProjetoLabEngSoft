@@ -19,7 +19,7 @@ public class AlunoDAOImpl implements AlunoDAO {
 
 	@Override
 	public void adicionar(Aluno aluno) {
-		String sql = "insert into tblAlunos values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into tblAlunos values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
 			ps.setInt(1, aluno.getRa());
@@ -29,12 +29,13 @@ public class AlunoDAOImpl implements AlunoDAO {
 			ps.setString(5, aluno.getCpf());
 			ps.setString(6, aluno.getLogradouro());
 			ps.setString(7, aluno.getNumero());
-			ps.setString(8, aluno.getBairro());
-			ps.setString(9, aluno.getCidade());
-			ps.setString(10, aluno.getEstado());
-			ps.setString(11, aluno.getTelefone());
-			ps.setString(12, aluno.getCelular());
-			ps.setString(13, aluno.getEmail());
+			ps.setString(8, aluno.getCep());
+			ps.setString(9, aluno.getBairro());
+			ps.setString(10, aluno.getCidade());
+			ps.setString(11, aluno.getEstado());
+			ps.setString(12, aluno.getTelefone());
+			ps.setString(13, aluno.getCelular());
+			ps.setString(14, aluno.getEmail());
 			ps.executeUpdate();
 			JOptionPane.showMessageDialog(null, "Aluno inserido com sucesso!", "Cadastro de Alunos", JOptionPane.INFORMATION_MESSAGE);
 		} catch (SQLException e) {

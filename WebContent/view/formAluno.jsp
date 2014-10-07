@@ -11,26 +11,27 @@
 </head>
 <body>
 	<% 
-	Aluno aluno = (Aluno)session.getAttribute("ALUNO");
-	if(aluno == null)
+	//Aluno aluno = (Aluno)session.getAttribute("ALUNO");
+	Aluno aluno = (Aluno)request.getAttribute("ALUNO");
+	if(aluno == null){
 		aluno = new Aluno();
-		//aluno.setNome("");
-		
+		aluno.setNome("");
+	}	
 	%>
 
 	<div align="center">
 		<h1>Formulário de Aluno</h1>
 	</div>
 	<div align="center">
-		<form>
+		<form action="./../AlunoController" method="POST">
 			<table>
 				<tr>
 					<td>RA:</td>
-					<td><input type="text" name="txtRA" value="<%=(String)aluno.getNome()%>"/>
+					<td><input type="text" name="txtRA"/>
 				</tr>
 				<tr>
 					<td>Nome:</td>
-					<td><input type="text" name="txtNome" size="40"/>
+					<td><input type="text" name="txtNome" value="<%=(String)aluno.getNome()%>" size="40"/>
 				</tr>
 				<tr>
 					<td>Data de Nascimento:</td>
@@ -40,8 +41,8 @@
 					<td>Sexo:</td>
 					<td>
 						<select name="cbSexo">
-							<option value="Masculino" name="cbMasculino">Masculino</option>
-							<option value="Feminino"name="cbFeminino">Feminino</option>
+							<option value="Masculino" name="cbSexo">Masculino</option>
+							<option value="Feminino"name="cbSexo">Feminino</option>
 						</select>
 					</td>
 				</tr>
@@ -59,8 +60,7 @@
 				</tr>
 				<tr>
 					<td>CEP:</td>
-					<td><mtw:inputMask name="cep" size="20" textAlign="right"
-                     maskDefined="CEP" /></td>
+					<td><input type="text" name="txtCep" size="20"/></td>
 				</tr>
 				<tr>
 					<td>Bairro:</td>
@@ -76,7 +76,7 @@
 						<select name="cbEstado"/>
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>
-								<option><%= estado %></option>
+								<option value="<%= estado %>" name="cbEstado"><%= estado %></option>
 							<% } %>
 						</select>
 					</td>
@@ -102,7 +102,7 @@
 					<td><input type="password" name="txtSenha"/>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit" name="btnSalvar" value="Salvar"/>
+					<td colspan="2" align="center"><input type="submit" name="btnSalvar" value="salvar"/>
 				</tr>
 			</table>
 		</form>
