@@ -76,22 +76,6 @@ public class AlunoController extends HttpServlet {
 			aluno.setCelular(req.getParameter("txtCelular"));
 			aluno.setEmail(req.getParameter("txtEmail"));
 			
-			String msg = aluno.getRa() + "\n" +
-			aluno.getNome() + "\n" +
-			aluno.getDataNascimento() + "\n" +
-			aluno.getSexo() + "\n" +
-			aluno.getCpf() + "\n" +
-			aluno.getLogradouro() + "\n" +
-			aluno.getCep() + "\n" +
-			aluno.getNumero() + "\n" +
-			aluno.getBairro() + "\n" +
-			aluno.getCidade() + "\n" +
-			aluno.getEstado() + "\n" +
-			aluno.getTelefone() + "\n" +
-			aluno.getCelular() + "\n" +
-			aluno.getEmail() + "\n";
-			JOptionPane.showMessageDialog(null, msg);
-			
 			AlunoDAO alunoDAO = new AlunoDAOImpl();
 			alunoDAO.adicionar(aluno);
 		}

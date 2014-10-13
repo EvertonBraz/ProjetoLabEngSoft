@@ -15,7 +15,20 @@
 	Aluno aluno = (Aluno)request.getAttribute("ALUNO");
 	if(aluno == null){
 		aluno = new Aluno();
+		aluno.setRa(0);
 		aluno.setNome("");
+		//aluno.setDataNascimento("");
+		//aluno.setSexo("");
+		aluno.setCpf("");
+		aluno.setLogradouro("");
+		aluno.setNumero("");
+		aluno.setCep("");
+		aluno.setBairro("");
+		aluno.setCidade("");
+		//aluno.setEstado("");
+		aluno.setTelefone("");
+		aluno.setCelular("");
+		aluno.setEmail("");
 	}	
 	%>
 
@@ -27,7 +40,7 @@
 			<table>
 				<tr>
 					<td>RA:</td>
-					<td><input type="text" name="txtRA"/>
+					<td><input type="text" name="txtRA"  value="<%=(int)aluno.getRa()%>"/>
 				</tr>
 				<tr>
 					<td>Nome:</td>
@@ -48,27 +61,27 @@
 				</tr>
 				<tr>
 					<td>CPF:</td>
-					<td><input type="text" name="txtCpf"/>
+					<td><input type="text" name="txtCpf"  value="<%=(String)aluno.getCpf()%>"/>
 				</tr>
 				<tr>
 					<td>Logradouro:</td>
-					<td><input type="text" name="txtLogradouro" size="40"/>
+					<td><input type="text" name="txtLogradouro" size="40"  value="<%=(String)aluno.getLogradouro()%>"/>
 				</tr>
 				<tr>
 					<td>Número:</td>
-					<td><input type="text" name="txtNumero"/>
+					<td><input type="text" name="txtNumero" value="<%=(String)aluno.getNumero()%>"/>
 				</tr>
 				<tr>
 					<td>CEP:</td>
-					<td><input type="text" name="txtCep" size="20"/></td>
+					<td><input type="text" name="txtCep" size="20" value="<%=(String)aluno.getCep()%>"/></td>
 				</tr>
 				<tr>
 					<td>Bairro:</td>
-					<td><input type="text" name="txtBairro"/>
+					<td><input type="text" name="txtBairro" value="<%=(String)aluno.getBairro()%>"/>
 				</tr>
 				<tr>
 					<td>Cidade:</td>
-					<td><input type="text" name="txtCidade"/>
+					<td><input type="text" name="txtCidade" value="<%=(String)aluno.getCidade()%>"/>
 				</tr>
 				<tr>
 					<td>Estado:</td>
@@ -83,15 +96,15 @@
 				</tr>
 				<tr>
 					<td>Telefone:</td>
-					<td><input type="text" name="txtTelefone"/>
+					<td><input type="text" name="txtTelefone"  value="<%=(String)aluno.getTelefone()%>"/>
 				</tr>
 				<tr>
 					<td>Celular:</td>
-					<td><input type="text" name="txtCelular"/>
+					<td><input type="text" name="txtCelular"  value="<%=(String)aluno.getCelular()%>"/>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input type="text" name="txtEmail" size="40"/>
+					<td><input type="text" name="txtEmail" size="40"  value="<%=(String)aluno.getEmail()%>"/>
 				</tr>
 				<tr>
 					<td>Login</td>
