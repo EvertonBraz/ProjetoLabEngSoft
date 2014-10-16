@@ -16,6 +16,7 @@
 	   AlunoDAO dao = new AlunoDAOImpl();
 	   listaAluno = dao.listar();
 	%>
+	
 	<div align="center">
 		<h1>Lista de Alunos</h1>
 	</div>
@@ -30,7 +31,7 @@
 			</tr>
 			<% } %>
 		</table>
-		<p><a href="formAluno.jsp">Novo aluno</p>
+		<p><a href="formAluno.jsp">Novo aluno</a></p>
 	</div>
 </body>
 </html>
