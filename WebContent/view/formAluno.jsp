@@ -35,36 +35,57 @@
 	}	
 	%>
 
+	<script>
+		window.onload = function() {
+			desabilitarCampos();
+		}
+
+		function desabilitarCampos() {
+			document.getElementById("ra").readOnly = true;
+			document.getElementById("nome").readOnly = true;
+			document.getElementById("dataNasc").readOnly = true;
+			document.getElementById("sexo").disabled = true;
+			document.getElementById("cpf").readOnly = true;
+			document.getElementById("logradouro").readOnly = true;
+			document.getElementById("numero").readOnly = true;
+			document.getElementById("cep").readOnly = true;
+			document.getElementById("bairro").readOnly = true;
+			document.getElementById("cidade").readOnly = true;
+			document.getElementById("estado").disabled = true;
+			document.getElementById("telefone").readOnly = true;
+			document.getElementById("celular").readOnly = true;
+			document.getElementById("email").readOnly = true;
+			document.getElementById("login").readOnly = true;
+			document.getElementById("senha").readOnly = true;
+
+		}
+		
+		function habilitarCampos() {
+			document.getElementById("ra").readOnly = false;
+			document.getElementById("nome").readOnly = false;
+			document.getElementById("dataNasc").readOnly = false;
+			document.getElementById("sexo").disabled = false;
+			document.getElementById("cpf").readOnly = false;
+			document.getElementById("logradouro").readOnly = false;
+			document.getElementById("numero").readOnly = false;
+			document.getElementById("cep").readOnly = false;
+			document.getElementById("bairro").readOnly = false;
+			document.getElementById("cidade").readOnly = false;
+			document.getElementById("estado").disabled = false;
+			document.getElementById("telefone").readOnly = false;
+			document.getElementById("celular").readOnly = false;
+			document.getElementById("email").readOnly = false;
+			document.getElementById("login").readOnly = false;
+			document.getElementById("senha").readOnly = false;
+		}
+	</script>
+
 	<div align="center">
 		<h1>Formulário de Aluno</h1>
 	</div>
 
-	<script>
-		function myFunction() {
-			document.getElementById("ra").readOnly = true;
-			document.getElementById("nome").readOnly = true;
-			document.getElementById("dataNasc").readOnly = true;
-	        document.getElementById("sexo").disabled = true;
-	        document.getElementById("cpf").readOnly = true;
-	        document.getElementById("logradouro").readOnly = true;
-	        document.getElementById("numero").readOnly = true;
-	        document.getElementById("cep").readOnly = true;
-	        document.getElementById("bairro").readOnly = true;
-	        document.getElementById("cidade").readOnly = true;
-	        document.getElementById("estado").disabled = true;
-	        document.getElementById("telefone").readOnly = true;
-	        document.getElementById("celular").readOnly = true;
-	        document.getElementById("email").readOnly = true;
-	        document.getElementById("login").readOnly = true;
-	        document.getElementById("senha").readOnly = true;
-	        
-		}
-	</script>
-	
-	<input type="submit" onclick="myFunction()" value="teste"/>
-
 	<div align="center">
-		<form name="formAluno" action="./../AlunoController" method="POST">
+		<form name="formAluno" action="/Projeto_LabEngSoft/AlunoController" method="POST">
 			<table>
 				<tr>
 					<td>RA:</td>
@@ -151,8 +172,8 @@
 					<td><input id="senha" type="password" name="txtSenha"/>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><a href="javascript:void(0)" onclick="myFunction();">Editar</a>&nbsp;
-					<a href>excluir</a></td>
+					<td colspan="2" align="center"><a href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
+					<a href="/Projeto_LabEngSoft/AlunoController?funcao=excluir&alunoRa=<%=request.getParameter("alunoRa")%>">Excluir</a></td>
 				</tr>
 				<tr>
 					<td></td>

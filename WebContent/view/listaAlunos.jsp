@@ -25,13 +25,11 @@
 			<% for(Aluno aluno : listaAluno){ %>
 			<tr>
 				<td style="width:200px;"><%= aluno.getNome() %></td>
-				<td><a href="./../AlunoController?funcao=mostrar&alunoRa=<%= aluno.getRa() %>">Mostar</a></td>
-				<td><a href="./../AlunoController?funcao=alterar&alunoRa=<%= aluno.getRa() %>">Alterar</a></td>
-				<td><a href="./../AlunoController?funcao=remover&alunoRa=<%= aluno.getRa() %>">Remover</a></td>
+				<td><a href="./../AlunoController?funcao=mostrar&alunoRa=<%= aluno.getRa() %>">Mostrar</a></td>
 			</tr>
 			<% } %>
 		</table>
-		<p><a href="formAluno.jsp">Novo aluno</a></p>
+		<p><a href="formAlunoNovo.jsp">Novo aluno</a></p>
 	</div>
 </body>
 </html>

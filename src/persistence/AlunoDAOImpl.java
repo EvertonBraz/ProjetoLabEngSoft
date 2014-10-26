@@ -99,6 +99,7 @@ public class AlunoDAOImpl implements AlunoDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			aluno = null;
 		}
 		return aluno;
 	}
@@ -167,8 +168,7 @@ public class AlunoDAOImpl implements AlunoDAO {
 
 	@Override
 	public void atualizar(int ra, Aluno aluno) {
-		String sql = "update tblAlunos set  ra = ?, nome = ?, dataNascimento = ?, sexo = ?, cpf = ?, logradouro = ?, numero = ?, bairro = ?, cidade = ?, estado = ?, telefone = ?, celular = ?, email = ? where ra = ?";
-		
+		String sql = "update tblAlunos set  ra = ?, nome = ?, dataNascimento = ?, sexo = ?, cpf = ?, logradouro = ?, numero = ?, cep = ?, bairro = ?, cidade = ?, estado = ?, telefone = ?, celular = ?, email = ? where ra = ?";
 		try {
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
 			ps.setInt(1, aluno.getRa());
