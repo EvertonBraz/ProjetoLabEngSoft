@@ -4,20 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Menu</title>
+<title>Cabeçalho</title>
+<link rel="stylesheet" type="text/css" href="/Projeto_LabEngSoft/CSS/formato.css">
 </head>
 <body>
-	<jsp:include page="/view/cabecalho.jsp" />
-	<div id="principal">
-		<h1>Menu</h1>
-		<p>
-			<a href="listaAlunos.jsp">Alunos</a>
-		</p>
-		<br>
-		<p>
-			<a href="professor.jsp">Professores</a>
-		</p>
+	<div>
+		<a href="index.jsp"><img alt="Controle de Eventos" src="/Projeto_LabEngSoft/imagens/cabecalho.png"></a>
 	</div>
-	<jsp:include page="/view/rodape.jsp"/>
 </body>
 </html>

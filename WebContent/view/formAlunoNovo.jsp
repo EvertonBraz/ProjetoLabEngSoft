@@ -16,9 +16,9 @@
 </head>
 <body>
 
-	<div align="center">
+	<jsp:include page="/view/cabecalho.jsp" />
+	<div id="principal">
 		<h1>Novo Aluno</h1>
-	</div>
 
 	<div align="center">
 		<form name="formAluno" action="/Projeto_LabEngSoft/AlunoController" method="POST">
@@ -101,12 +101,21 @@
 				</tr>
 				<tr>
 					<td></td>
-				</tr>				
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><a href="/Projeto_LabEngSoft/view/listaAlunos.jsp">Cancelar</td>
+				</tr>	
+				<tr>
+					<td></td>
+				</tr>			
 				<tr>
 					<td colspan="2" align="center"><input type="submit" name="btnSalvar" value="salvar"/>
 				</tr>
 			</table>
 		</form>
 	</div>
+	</div>
+	
+	<jsp:include page="/view/rodape.jsp"/>
 </body>
 </html>

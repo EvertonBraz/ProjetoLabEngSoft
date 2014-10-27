@@ -3,7 +3,9 @@ package control;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,8 +32,9 @@ public class AlunoController extends HttpServlet {
         
     }
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {		
 		String funcao = req.getParameter("funcao");
+		
 		if(funcao.equals("mostrar")){
 			int ra = Integer.parseInt(req.getParameter("alunoRa"));
 			AlunoDAO dao = new AlunoDAOImpl();
@@ -52,48 +55,61 @@ public class AlunoController extends HttpServlet {
 			res.sendRedirect("./view/listaAlunos.jsp");
 		}
 		
-		
 	}
 
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		String pesquisa = req.getParameter("btnPesquisar");
 		String salvar = req.getParameter("btnSalvar");
-		String funcao = req.getParameter("funcao");
-		if(salvar.equals("salvar")){
-			Aluno aluno = new Aluno();
-			aluno.setRa(Integer.parseInt(req.getParameter("txtRA")));
-			aluno.setNome(req.getParameter("txtNome"));
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date data = null;
-			try {
-				data = sdf.parse(req.getParameter("txtDataNasc"));
-			} catch (ParseException e) {
-				e.printStackTrace();
+		
+		if(pesquisa != null){
+			if(pesquisa.equals("Pesquisar")){
+				pesquisa = req.getParameter("txtPesquisar");
+				List<Aluno> listaAlunos = alunoDAO.pesquisarPorNome(pesquisa);
+				req.setAttribute("PESQUISA", listaAlunos);
+				RequestDispatcher rd = req.getRequestDispatcher("./view/listaAlunos.jsp");
+				rd.include( req, res );
 			}
-			aluno.setDataNascimento(data);
-			String sexo = req.getParameter("cbSexo");
-			if(sexo.equals("Masculino"))
-				aluno.setSexo(1);
-			else
-				aluno.setSexo(2);
-			aluno.setCpf(req.getParameter("txtCpf"));
-			aluno.setLogradouro(req.getParameter("txtLogradouro"));
-			aluno.setNumero(req.getParameter("txtNumero"));
-			aluno.setCep(req.getParameter("txtCep"));
-			aluno.setBairro(req.getParameter("txtBairro"));
-			aluno.setCidade(req.getParameter("txtCidade"));
-			aluno.setEstado(req.getParameter("cbEstado"));
-			aluno.setTelefone(req.getParameter("txtTelefone"));
-			aluno.setCelular(req.getParameter("txtCelular"));
-			aluno.setEmail(req.getParameter("txtEmail"));
-			
-			Aluno a = alunoDAO.pesquisarPorRa(aluno.getRa());
-			if(a == null){
-				alunoDAO.adicionar(aluno);
-			}else{
-				alunoDAO.atualizar(a.getRa(), aluno);
+		}
+		
+		if(salvar != null){
+			if(salvar.equals("salvar")){
+				Aluno aluno = new Aluno();
+				aluno.setRa(Integer.parseInt(req.getParameter("txtRA")));
+				aluno.setNome(req.getParameter("txtNome"));
+				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+				Date data = null;
+				try {
+					data = sdf.parse(req.getParameter("txtDataNasc"));
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				aluno.setDataNascimento(data);
+				String sexo = req.getParameter("cbSexo");
+				if(sexo.equals("Masculino"))
+					aluno.setSexo(1);
+				else
+					aluno.setSexo(2);
+				aluno.setCpf(req.getParameter("txtCpf"));
+				aluno.setLogradouro(req.getParameter("txtLogradouro"));
+				aluno.setNumero(req.getParameter("txtNumero"));
+				aluno.setCep(req.getParameter("txtCep"));
+				aluno.setBairro(req.getParameter("txtBairro"));
+				aluno.setCidade(req.getParameter("txtCidade"));
+				aluno.setEstado(req.getParameter("cbEstado"));
+				aluno.setTelefone(req.getParameter("txtTelefone"));
+				aluno.setCelular(req.getParameter("txtCelular"));
+				aluno.setEmail(req.getParameter("txtEmail"));
+
+				Aluno a = alunoDAO.pesquisarPorRa(aluno.getRa());
+				if(a == null){
+					alunoDAO.adicionar(aluno);
+				}else{
+					alunoDAO.atualizar(a.getRa(), aluno);
+				}
+				res.sendRedirect("./view/listaAlunos.jsp");
 			}
-			res.sendRedirect("./view/listaAlunos.jsp");
 		}
 			
 	}

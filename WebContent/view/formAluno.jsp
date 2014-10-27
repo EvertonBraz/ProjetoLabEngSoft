@@ -57,7 +57,7 @@
 			document.getElementById("email").readOnly = true;
 			document.getElementById("login").readOnly = true;
 			document.getElementById("senha").readOnly = true;
-
+			document.getElementById("btnSalvar").style.visibility="hidden";
 		}
 		
 		function habilitarCampos() {
@@ -77,12 +77,13 @@
 			document.getElementById("email").readOnly = false;
 			document.getElementById("login").readOnly = false;
 			document.getElementById("senha").readOnly = false;
+			document.getElementById("btnSalvar").style.visibility="visible";
 		}
 	</script>
 
-	<div align="center">
+	<jsp:include page="/view/cabecalho.jsp" />
+	<div id="principal">
 		<h1>Formulário de Aluno</h1>
-	</div>
 
 	<div align="center">
 		<form name="formAluno" action="/Projeto_LabEngSoft/AlunoController" method="POST">
@@ -173,16 +174,20 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><a href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
-					<a href="/Projeto_LabEngSoft/AlunoController?funcao=excluir&alunoRa=<%=request.getParameter("alunoRa")%>">Excluir</a></td>
+					<a href="/Projeto_LabEngSoft/AlunoController?funcao=excluir&alunoRa=<%=request.getParameter("alunoRa")%>">Excluir</a>&nbsp;
+					<a href="/Projeto_LabEngSoft/view/listaAlunos.jsp">Lista</a></td>
 				</tr>
 				<tr>
 					<td></td>
 				</tr>				
 				<tr>
-					<td colspan="2" align="center"><input type="submit" name="btnSalvar" value="salvar"/>
+					<td colspan="2" align="center"><input type="submit" id="btnSalvar" name="btnSalvar" value="salvar"/>
 				</tr>
 			</table>
 		</form>
 	</div>
+	</div>
+	
+	<jsp:include page="/view/rodape.jsp"/>
 </body>
 </html>
