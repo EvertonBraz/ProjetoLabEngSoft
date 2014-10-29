@@ -31,12 +31,20 @@
 		<br>
 		
 		<div align="center">
+<<<<<<< HEAD
 		<form name="pesquisarAluno" action="/Projeto_LabEngSoft/ProfessorController" method="POST">
+=======
+		<form name="pesquisarAluno" action="/Projeto_LabEngSoft/AlunoController" method="POST">
+>>>>>>> origin/master
 			<table>
 				<tr>
 					<td><label>Pesquisar:</label></td>
 					<td><input type="input" id="txtPesquisa" name="txtPesquisar" size="50" class="form-control"/></td>
+<<<<<<< HEAD
 					<td>&nbsp;<input type="submit" name="btnPesquisar" value="Pesquisar" class="btn btn-success"/></td>
+=======
+					<td><input type="submit" name="btnPesquisar" value="Pesquisar" class="btn btn-success"/></td>
+>>>>>>> origin/master
 				</tr>
 			</table>
 		</form>
@@ -52,7 +60,11 @@
 				%>
 				<tr>
 					<td style="width: 200px;"><%=professor.getNome()%></td>
+<<<<<<< HEAD
 					<td><a class="btn btn-info" href="/Projeto_LabEngSoft/ProfessorController?funcao=mostrar&professorMatricula=<%=professor.getMatricula()%>">Mostrar</a></td>
+=======
+					<td><a class="btn btn-info" href="/Projeto_LabEngSoft/AlunoController?funcao=mostrar&professorMatricula=<%=professor.getMatricula()%>">Mostrar</a></td>
+>>>>>>> origin/master
 				</tr>
 				<%
 					}
@@ -60,7 +72,11 @@
 				%>
 			</table>
 			<p>
+<<<<<<< HEAD
 				<a class="btn btn-primary" href="/Projeto_LabEngSoft/view/formProfessorNovo.jsp">Novo professor</a> &nbsp; <a class="btn btn-default" href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
+=======
+				<a class="btn btn-primary" href="/Projeto_LabEngSoft/view/formProfessorNovo.jsp">Novo professor</a> &nbsp; <a href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
+>>>>>>> origin/master
 			</p>
 			<br>
 		</div>

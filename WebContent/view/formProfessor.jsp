@@ -111,7 +111,11 @@
 					<td>Sexo:</td>
 					<% String sexo = LerCampos.lerSexo(professor.getSexo()); %>
 					<td>
+<<<<<<< HEAD
 						<select id="sexo" name="cbSexo" class="form-control">
+=======
+						<select id="sexo" name="cbSexo">
+>>>>>>> origin/master
 							<option <%=LerCampos.sexoSelecionado("Masculino", sexo)%> value="Masculino">Masculino</option>
 							<option <%=LerCampos.sexoSelecionado("Feminino", sexo)%> value="Feminino">Feminino</option>
 						</select>
@@ -144,7 +148,11 @@
 				<tr>
 					<td>Estado:</td>
 					<td>
+<<<<<<< HEAD
 						<select id="estado" name="cbEstado" class="form-control"/>
+=======
+						<select id="estado" name="cbEstado"/>
+>>>>>>> origin/master
 							<% String estadoConsultado = professor.getEstado(); %>
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>

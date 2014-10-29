@@ -38,7 +38,11 @@
 				<tr>
 					<td>Sexo:</td>
 					<td>
+<<<<<<< HEAD
 						<select id="sexo" name="cbSexo" class="form-control">
+=======
+						<select id="sexo" name="cbSexo">
+>>>>>>> origin/master
 							<option value="Masculino">Masculino</option>
 							<option value="Feminino">Feminino</option>
 						</select>
@@ -71,7 +75,11 @@
 				<tr>
 					<td>Estado:</td>
 					<td>
+<<<<<<< HEAD
 						<select id="estado" name="cbEstado" class="form-control"/>
+=======
+						<select id="estado" name="cbEstado"/>
+>>>>>>> origin/master
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>
 								<option value="<%= estado %>"><%= estado %></option>
@@ -103,11 +111,23 @@
 					<td></td>
 				</tr>
 				<tr>
+<<<<<<< HEAD
 					<td colspan="2" align="center"></td>
 				</tr>	
 			</table><br>
 			<a href="/Projeto_LabEngSoft/view/listaProfessores.jsp" class="btn btn-danger">Cancelar</a>
 			<input class="btn btn-primary" type="submit" name="btnSalvar" value="salvar"/>
+=======
+					<td colspan="2" align="center"><a href="/Projeto_LabEngSoft/view/listaProfessores.jsp" class="btn btn-danger">Cancelar</td>
+				</tr>	
+				<tr>
+					<td></td>
+				</tr>			
+				<tr>
+					<td colspan="2" align="center"><input class="btn btn-primary" type="submit" name="btnSalvar" value="salvar"/>
+				</tr>
+			</table>
+>>>>>>> origin/master
 		</form>
 	</div>
 	</div>
