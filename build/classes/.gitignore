@@ -1,5 +1,7 @@
-/control
-/model
-/persistence
-/validations
+/persistence/
 /filters
+/filters
+/filters
+/control/
+/model/
+/validations/
