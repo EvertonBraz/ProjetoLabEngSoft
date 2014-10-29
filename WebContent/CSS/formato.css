@@ -1,0 +1,33 @@
+@CHARSET "ISO-8859-1";
+
+*{
+	margin:0px;
+}
+
+body{
+	text-align:center;
+}
+
+#principal{
+	position:relative;
+	top:15px;
+	width:700px;
+	min-height:415px;
+	background-color:#ffffff;
+	border: solid #c0c0c0 1px;
+	margin:0 auto;
+}
+
+#formulario{
+	position:relative;
+}
+
+
+#rodape{
+	position:relative;
+	padding-top:23px;
+	font-size:12px;
+	font-family:tahoma;
+	color:navy;
+	text-align:center;
+}

@@ -3,9 +3,7 @@ package persistence;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Connection;
-import java.sql.Statement;
 
-import javax.swing.JOptionPane;
 public class Conexao {
 
 	public Connection getConnection(){
@@ -13,7 +11,7 @@ public class Conexao {
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdeventos", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdeventos", "root", "123456");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}	

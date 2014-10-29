@@ -7,8 +7,10 @@
 <title>Login</title>
 </head>
 <body>
-	<div align="center"><h2><i>Login</i></h2></div>
-	<div align="center">
+	<jsp:include page="/view/cabecalho.jsp" />
+	<div id="principal">
+		<div><h2><i>Login</i></h2></div>
+		<div align="center">
 		<form action="./login" method="POST">
 			<table>
 				<tr>
@@ -24,6 +26,7 @@
 				</tr>
 			</table>
 		</form>
+		</div>
 	</div>
 </body>
 </html>
