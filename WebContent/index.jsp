@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/Projeto_LabEngSoft/CSS/formato.css">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
 <title>Login</title>
 </head>
 <body>
@@ -15,14 +18,14 @@
 			<table>
 				<tr>
 					<td>Login:</td>
-					<td><input type="text" name="txtLogin" style="width: 232px; height: 25px"></td>
+					<td><input type="text" class="form-control" name="txtLogin"></td>
 				</tr>
 				<tr>
 					<td>Senha:</td>
-					<td><input type="password" name="txtSenha" style="width: 232px; height: 25px"></td>
+					<td><input type="password" class="form-control" name="txtSenha"></td>
 				</tr>
 				<tr>
-					<td colspan=2><input type="submit" name="btnLogin" value="Entrar"></td>
+					<td colspan=2><input type="submit" class="btn btn-primary" name="btnLogin" value="Entrar"></td>
 				</tr>
 			</table>
 		</form>

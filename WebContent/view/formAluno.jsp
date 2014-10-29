@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Formulário de Aluno</title>
-<mtw:inputMaskConfig />
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
 	<% 
@@ -90,11 +90,11 @@
 			<table>
 				<tr>
 					<td>RA:</td>
-					<td><input id="ra" type="text" name="txtRA"  value="<%=(int)aluno.getRa()%>"/></td>
+					<td><input id="ra" type="text" class="form-control" name="txtRA" value="<%=(int)aluno.getRa()%>"/></td>
 				</tr>
 				<tr>
 					<td>Nome:</td>
-					<td><input id="nome" type="text" name="txtNome" value="<%=(String)aluno.getNome()%>" size="40"/></td>
+					<td><input id="nome" type="text" class="form-control" name="txtNome" value="<%=(String)aluno.getNome()%>" size="40"/></td>
 				</tr>
 				<tr>
 					<td>Data de Nascimento:</td>
@@ -104,13 +104,13 @@
 					if (aluno.getDataNascimento() != null)
 						data = sdf.format(aluno.getDataNascimento());
 					%>
-					<td><input id="dataNasc" type="text" name="txtDataNasc" value="<%= data %>"/>
+					<td><input id="dataNasc" type="text" class="form-control" name="txtDataNasc" value="<%= data %>"/>
 				</tr>
 				<tr>
 					<td>Sexo:</td>
 					<% String sexo = LerCampos.lerSexo(aluno.getSexo()); %>
 					<td>
-						<select id="sexo" name="cbSexo">
+						<select id="sexo" class="form-control" name="cbSexo">
 							<option <%=LerCampos.sexoSelecionado("Masculino", sexo)%> value="Masculino">Masculino</option>
 							<option <%=LerCampos.sexoSelecionado("Feminino", sexo)%> value="Feminino">Feminino</option>
 						</select>
@@ -118,32 +118,32 @@
 				</tr>
 				<tr>
 					<td>CPF:</td>
-					<td><input id="cpf" type="text" name="txtCpf"  value="<%=(String)aluno.getCpf()%>"/>
+					<td><input id="cpf" type="text" class="form-control" name="txtCpf"  value="<%=(String)aluno.getCpf()%>"/>
 				</tr>
 				<tr>
 					<td>Logradouro:</td>
-					<td><input id="logradouro" type="text" name="txtLogradouro" size="40"  value="<%=(String)aluno.getLogradouro()%>"/>
+					<td><input id="logradouro" type="text" class="form-control" name="txtLogradouro" size="40"  value="<%=(String)aluno.getLogradouro()%>"/>
 				</tr>
 				<tr>
 					<td>Número:</td>
-					<td><input id="numero" type="text" name="txtNumero" value="<%=(String)aluno.getNumero()%>"/>
+					<td><input id="numero" type="text" class="form-control" name="txtNumero" value="<%=(String)aluno.getNumero()%>"/>
 				</tr>
 				<tr>
 					<td>CEP:</td>
-					<td><input id="cep" type="text" name="txtCep" size="20" value="<%=(String)aluno.getCep()%>"/></td>
+					<td><input id="cep" type="text" class="form-control" name="txtCep" size="20" value="<%=(String)aluno.getCep()%>"/></td>
 				</tr>
 				<tr>
 					<td>Bairro:</td>
-					<td><input id="bairro" type="text" name="txtBairro" value="<%=(String)aluno.getBairro()%>"/>
+					<td><input id="bairro" type="text" class="form-control" name="txtBairro" value="<%=(String)aluno.getBairro()%>"/>
 				</tr>
 				<tr>
 					<td>Cidade:</td>
-					<td><input id="cidade" type="text" name="txtCidade" value="<%=(String)aluno.getCidade()%>"/>
+					<td><input id="cidade" type="text" class="form-control" name="txtCidade" value="<%=(String)aluno.getCidade()%>"/>
 				</tr>
 				<tr>
 					<td>Estado:</td>
 					<td>
-						<select id="estado" name="cbEstado"/>
+						<select id="estado" class="form-control" name="cbEstado"/>
 							<% String estadoConsultado = aluno.getEstado(); %>
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>
@@ -154,36 +154,36 @@
 				</tr>
 				<tr>
 					<td>Telefone:</td>
-					<td><input id="telefone" type="text" name="txtTelefone"  value="<%=(String)aluno.getTelefone()%>"/>
+					<td><input id="telefone" type="text" class="form-control" name="txtTelefone"  value="<%=(String)aluno.getTelefone()%>"/>
 				</tr>
 				<tr>
 					<td>Celular:</td>
-					<td><input id="celular" type="text" name="txtCelular"  value="<%=(String)aluno.getCelular()%>"/>
+					<td><input id="celular" type="text" class="form-control" name="txtCelular"  value="<%=(String)aluno.getCelular()%>"/>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input id="email" type="text" name="txtEmail" size="40"  value="<%=(String)aluno.getEmail()%>"/>
+					<td><input id="email" type="text" class="form-control" name="txtEmail" size="40"  value="<%=(String)aluno.getEmail()%>"/>
 				</tr>
 				<tr>
 					<td>Login</td>
-					<td><input id="login" type="text" name="txtLogin"/>
+					<td><input id="login" type="text" class="form-control" name="txtLogin"/>
 				</tr>
 				<tr>
 					<td>Senha</td>
-					<td><input id="senha" type="password" name="txtSenha"/>
+					<td><input id="senha" type="password" class="form-control" name="txtSenha"/>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><a href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
-					<a href="/Projeto_LabEngSoft/AlunoController?funcao=excluir&alunoRa=<%=request.getParameter("alunoRa")%>">Excluir</a>&nbsp;
-					<a href="/Projeto_LabEngSoft/view/listaAlunos.jsp">Lista</a></td>
-				</tr>
-				<tr>
-					<td></td>
+					<td><br></td>
 				</tr>				
-				<tr>
-					<td colspan="2" align="center"><input type="submit" id="btnSalvar" name="btnSalvar" value="salvar"/>
-				</tr>
+				
 			</table>
+			<div align="center">
+			<a class="btn btn-primary" href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
+					<a class="btn btn-danger" href="/Projeto_LabEngSoft/AlunoController?funcao=excluir&alunoRa=<%=request.getParameter("alunoRa")%>">Excluir</a>&nbsp;
+					<a class="btn btn-default" href="/Projeto_LabEngSoft/view/listaAlunos.jsp">Lista</a>
+			</div>
+			<br>
+			<input type="submit" class="btn btn-primary" id="btnSalvar" name="btnSalvar" value="salvar"/>
 		</form>
 	</div>
 	</div>

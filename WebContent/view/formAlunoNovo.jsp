@@ -12,7 +12,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Formulário de Aluno</title>
-<mtw:inputMaskConfig />
 </head>
 <body>
 
@@ -25,20 +24,20 @@
 			<table>
 				<tr>
 					<td>RA:</td>
-					<td><input id="ra" type="text" name="txtRA"/></td>
+					<td><input class="form-control" id="ra" type="text" class="form-control" name="txtRA"/></td>
 				</tr>
 				<tr>
 					<td>Nome:</td>
-					<td><input id="nome" type="text" name="txtNome" size="40"/></td>
+					<td><input class="form-control" id="nome" type="text" name="txtNome" size="40"/></td>
 				</tr>
 				<tr>
 					<td>Data de Nascimento:</td>
-					<td><input id="dataNasc" type="text" name="txtDataNasc"/>
+					<td><input class="form-control" id="dataNasc" type="text" name="txtDataNasc"/>
 				</tr>
 				<tr>
 					<td>Sexo:</td>
 					<td>
-						<select id="sexo" name="cbSexo">
+						<select id="sexo" class="form-control" name="cbSexo">
 							<option value="Masculino">Masculino</option>
 							<option value="Feminino">Feminino</option>
 						</select>
@@ -46,32 +45,32 @@
 				</tr>
 				<tr>
 					<td>CPF:</td>
-					<td><input id="cpf" type="text" name="txtCpf"/>
+					<td><input class="form-control" id="cpf" type="text" name="txtCpf"/>
 				</tr>
 				<tr>
 					<td>Logradouro:</td>
-					<td><input id="logradouro" type="text" name="txtLogradouro" size="40"/>
+					<td><input class="form-control" id="logradouro" type="text" name="txtLogradouro" size="40"/>
 				</tr>
 				<tr>
 					<td>Número:</td>
-					<td><input id="numero" type="text" name="txtNumero"/>
+					<td><input class="form-control" id="numero" type="text" name="txtNumero"/>
 				</tr>
 				<tr>
 					<td>CEP:</td>
-					<td><input id="cep" type="text" name="txtCep" size="20"/></td>
+					<td><input class="form-control" id="cep" type="text" name="txtCep" size="20"/></td>
 				</tr>
 				<tr>
 					<td>Bairro:</td>
-					<td><input id="bairro" type="text" name="txtBairro"/>
+					<td><input class="form-control" id="bairro" type="text" name="txtBairro"/>
 				</tr>
 				<tr>
 					<td>Cidade:</td>
-					<td><input id="cidade" type="text" name="txtCidade"/>
+					<td><input class="form-control" id="cidade" type="text" name="txtCidade"/>
 				</tr>
 				<tr>
 					<td>Estado:</td>
 					<td>
-						<select id="estado" name="cbEstado"/>
+						<select id="estado" name="cbEstado" class="form-control"/>
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>
 								<option value="<%= estado %>"><%= estado %></option>
@@ -81,37 +80,37 @@
 				</tr>
 				<tr>
 					<td>Telefone:</td>
-					<td><input id="telefone" type="text" name="txtTelefone"/>
+					<td><input class="form-control" id="telefone" type="text" name="txtTelefone"/>
 				</tr>
 				<tr>
 					<td>Celular:</td>
-					<td><input id="celular" type="text" name="txtCelular"/>
+					<td><input class="form-control" id="celular" type="text" name="txtCelular"/>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input id="email" type="text" name="txtEmail" size="40"/>
+					<td><input class="form-control" id="email" type="text" name="txtEmail" size="40"/>
 				</tr>
 				<tr>
 					<td>Login</td>
-					<td><input id="login" type="text" name="txtLogin"/>
+					<td><input class="form-control" id="login" type="text" name="txtLogin"/>
 				</tr>
 				<tr>
 					<td>Senha</td>
-					<td><input id="senha" type="password" name="txtSenha"/>
+					<td><input class="form-control" id="senha" type="password" name="txtSenha"/>
 				</tr>
 				<tr>
 					<td></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><a href="/Projeto_LabEngSoft/view/listaAlunos.jsp">Cancelar</td>
-				</tr>	
+					<td><br></td>
+				</tr>
 				<tr>
-					<td></td>
+					<td><br></td>
 				</tr>			
-				<tr>
-					<td colspan="2" align="center"><input type="submit" name="btnSalvar" value="salvar"/>
-				</tr>
 			</table>
+			
+			<input type="submit" class="btn btn-primary" name="btnSalvar" value="salvar"/>&nbsp;
+					<a class="btn btn-danger" href="/Projeto_LabEngSoft/view/listaAlunos.jsp">Cancelar</a>
 		</form>
 	</div>
 	</div>

@@ -4,7 +4,7 @@
     import="java.util.List"
     import="java.util.ArrayList" 
     import="persistence.AlunoDAO"
-    import="persistence.AlunoDAOImpl" %>
+    import="persistence.AlunoDAOImpl;"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +12,7 @@
 <title>Lista de Alunos</title>
 </head>
 <body>
+	<jsp:include page="/view/cabecalho.jsp" />
 	<% 
 	List<Aluno> listaAluno = (List<Aluno>)request.getAttribute("PESQUISA");
 	if(listaAluno == null){
@@ -22,7 +23,7 @@
 	   
 	%>
 	
-	<jsp:include page="/view/cabecalho.jsp" />
+	
 	<div id="principal">
 		<h1>Lista de Alunos</h1>
 		
@@ -33,8 +34,8 @@
 			<table>
 				<tr>
 					<td><label>Pesquisar:</label></td>
-					<td><input type="input" id="txtPesquisa" name="txtPesquisar" size="50""/></td>
-					<td><input type="submit" name="btnPesquisar" value="Pesquisar"/></td>
+					<td><input type="input" id="txtPesquisa" name="txtPesquisar" size="50" /></td>
+					<td>&nbsp;<input type="submit" name="btnPesquisar" value="Pesquisar" class="btn btn-success"/></td>
 				</tr>
 			</table>
 		</form>
@@ -43,15 +44,14 @@
 		<br>
 		
 		<div align="center">
-			<table border="0">
+			<table class="table">
 				<%
 				if(listaAluno.size() > 0){
 					for (Aluno aluno : listaAluno) {
 				%>
 				<tr>
 					<td style="width: 200px;"><%=aluno.getNome()%></td>
-					<td><a
-						href="/Projeto_LabEngSoft/AlunoController?funcao=mostrar&alunoRa=<%=aluno.getRa()%>">Mostrar</a></td>
+					<td><a class="btn btn-info" href="/Projeto_LabEngSoft/AlunoController?funcao=mostrar&alunoRa=<%=aluno.getRa()%>">Mostrar</a></td>
 				</tr>
 				<%
 					}
@@ -59,7 +59,7 @@
 				%>
 			</table>
 			<p>
-				<a href="/Projeto_LabEngSoft/view/formAlunoNovo.jsp">Novo aluno</a> &nbsp; <a href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
+				<a class="btn btn-primary" href="/Projeto_LabEngSoft/view/formAlunoNovo.jsp">Novo aluno</a> &nbsp; <a class="btn btn-default" href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
 			</p>
 			<br>
 		</div>

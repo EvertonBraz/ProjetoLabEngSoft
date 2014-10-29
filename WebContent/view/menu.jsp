@@ -15,7 +15,7 @@
 		</p>
 		<br>
 		<p>
-			<a href="professor.jsp">Professores</a>
+			<a href="listaProfessores.jsp">Professores</a>
 		</p>
 	</div>
 	<jsp:include page="/view/rodape.jsp"/>
