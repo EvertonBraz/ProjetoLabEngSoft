@@ -33,8 +33,8 @@
 			<table>
 				<tr>
 					<td><label>Pesquisar:</label></td>
-					<td><input type="input" id="txtPesquisa" name="txtPesquisar" size="50""/></td>
-					<td><input type="submit" name="btnPesquisar" value="Pesquisar"/></td>
+					<td><input type="input" id="txtPesquisa" name="txtPesquisar" size="50" class="form-control"/></td>
+					<td><input type="submit" name="btnPesquisar" value="Pesquisar" class="btn btn-success"/></td>
 				</tr>
 			</table>
 		</form>
@@ -43,15 +43,14 @@
 		<br>
 		
 		<div align="center">
-			<table border="0">
+			<table border="0" class="table">
 				<%
 				if(listaProfessor.size() > 0){
 					for (Professor professor : listaProfessor) {
 				%>
 				<tr>
 					<td style="width: 200px;"><%=professor.getNome()%></td>
-					<td><a
-						href="/Projeto_LabEngSoft/AlunoController?funcao=mostrar&professorMatricula=<%=professor.getMatricula()%>">Mostrar</a></td>
+					<td><a class="btn btn-info" href="/Projeto_LabEngSoft/AlunoController?funcao=mostrar&professorMatricula=<%=professor.getMatricula()%>">Mostrar</a></td>
 				</tr>
 				<%
 					}
@@ -59,7 +58,7 @@
 				%>
 			</table>
 			<p>
-				<a href="/Projeto_LabEngSoft/view/formProfessorNovo.jsp">Novo professor</a> &nbsp; <a href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
+				<a class="btn btn-primary" href="/Projeto_LabEngSoft/view/formProfessorNovo.jsp">Novo professor</a> &nbsp; <a href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
 			</p>
 			<br>
 		</div>

@@ -25,15 +25,15 @@
 			<table>
 				<tr>
 					<td>Matrícula:</td>
-					<td><input id="matricula" type="text" name="txtMatricula"/></td>
+					<td><input class="form-control" id="matricula" type="text" name="txtMatricula"/></td>
 				</tr>
 				<tr>
 					<td>Nome:</td>
-					<td><input id="nome" type="text" name="txtNome" size="40"/></td>
+					<td><input class="form-control" id="nome" type="text" name="txtNome" size="40"/></td>
 				</tr>
 				<tr>
 					<td>Data de Nascimento:</td>
-					<td><input id="dataNasc" type="text" name="txtDataNasc"/>
+					<td><input class="form-control" id="dataNasc" type="text" name="txtDataNasc"/>
 				</tr>
 				<tr>
 					<td>Sexo:</td>
@@ -46,27 +46,27 @@
 				</tr>
 				<tr>
 					<td>CPF:</td>
-					<td><input id="cpf" type="text" name="txtCpf"/>
+					<td><input class="form-control" id="cpf" type="text" name="txtCpf"/>
 				</tr>
 				<tr>
 					<td>Logradouro:</td>
-					<td><input id="logradouro" type="text" name="txtLogradouro" size="40"/>
+					<td><input class="form-control" id="logradouro" type="text" name="txtLogradouro" size="40"/>
 				</tr>
 				<tr>
 					<td>Número:</td>
-					<td><input id="numero" type="text" name="txtNumero"/>
+					<td><input class="form-control" id="numero" type="text" name="txtNumero"/>
 				</tr>
 				<tr>
 					<td>CEP:</td>
-					<td><input id="cep" type="text" name="txtCep" size="20"/></td>
+					<td><input class="form-control" id="cep" type="text" name="txtCep" size="20"/></td>
 				</tr>
 				<tr>
 					<td>Bairro:</td>
-					<td><input id="bairro" type="text" name="txtBairro"/>
+					<td><input class="form-control" id="bairro" type="text" name="txtBairro"/>
 				</tr>
 				<tr>
 					<td>Cidade:</td>
-					<td><input id="cidade" type="text" name="txtCidade"/>
+					<td><input class="form-control" id="cidade" type="text" name="txtCidade"/>
 				</tr>
 				<tr>
 					<td>Estado:</td>
@@ -81,35 +81,35 @@
 				</tr>
 				<tr>
 					<td>Telefone:</td>
-					<td><input id="telefone" type="text" name="txtTelefone"/>
+					<td><input class="form-control" id="telefone" type="text" name="txtTelefone"/>
 				</tr>
 				<tr>
 					<td>Celular:</td>
-					<td><input id="celular" type="text" name="txtCelular"/>
+					<td><input class="form-control" id="celular" type="text" name="txtCelular"/>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input id="email" type="text" name="txtEmail" size="40"/>
+					<td><input class="form-control" id="email" type="text" name="txtEmail" size="40"/>
 				</tr>
 				<tr>
 					<td>Login</td>
-					<td><input id="login" type="text" name="txtLogin"/>
+					<td><input class="form-control" id="login" type="text" name="txtLogin"/>
 				</tr>
 				<tr>
 					<td>Senha</td>
-					<td><input id="senha" type="password" name="txtSenha"/>
+					<td><input class="form-control" id="senha" type="password" name="txtSenha"/>
 				</tr>
 				<tr>
 					<td></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><a href="/Projeto_LabEngSoft/view/listaProfessores.jsp">Cancelar</td>
+					<td colspan="2" align="center"><a href="/Projeto_LabEngSoft/view/listaProfessores.jsp" class="btn btn-danger">Cancelar</td>
 				</tr>	
 				<tr>
 					<td></td>
 				</tr>			
 				<tr>
-					<td colspan="2" align="center"><input type="submit" name="btnSalvar" value="salvar"/>
+					<td colspan="2" align="center"><input class="btn btn-primary" type="submit" name="btnSalvar" value="salvar"/>
 				</tr>
 			</table>
 		</form>

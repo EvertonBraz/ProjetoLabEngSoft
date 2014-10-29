@@ -16,7 +16,6 @@
 </head>
 <body>
 	<% 
-	//Aluno aluno = (Aluno)session.getAttribute("ALUNO");
 	Professor professor = (Professor)request.getAttribute("PROFESSOR");
 	if(professor == null){
 		professor = new Professor();
@@ -90,11 +89,11 @@
 			<table>
 				<tr>
 					<td>Matrícula:</td>
-					<td><input id="matricula" type="text" name="txtMatricula"  value="<%= professor.getMatricula() %>"/></td>
+					<td><input id="matricula" type="text" name="txtMatricula" class="form-control"  value="<%= professor.getMatricula() %>"/></td>
 				</tr>
 				<tr>
 					<td>Nome:</td>
-					<td><input id="nome" type="text" name="txtNome" value="<%=(String)professor.getNome()%>" size="40"/></td>
+					<td><input id="nome" type="text" name="txtNome" class="form-control" value="<%=(String)professor.getNome()%>" size="40"/></td>
 				</tr>
 				<tr>
 					<td>Data de Nascimento:</td>
@@ -104,7 +103,7 @@
 					if (professor.getDataNascimento() != null)
 						data = sdf.format(professor.getDataNascimento());
 					%>
-					<td><input id="dataNasc" type="text" name="txtDataNasc" value="<%= data %>"/>
+					<td><input id="dataNasc" type="text" name="txtDataNasc" class="form-control" value="<%= data %>"/>
 				</tr>
 				<tr>
 					<td>Sexo:</td>
@@ -118,27 +117,27 @@
 				</tr>
 				<tr>
 					<td>CPF:</td>
-					<td><input id="cpf" type="text" name="txtCpf"  value="<%=(String)professor.getCpf()%>"/>
+					<td><input id="cpf" type="text" name="txtCpf" class="form-control" value="<%=(String)professor.getCpf()%>"/>
 				</tr>
 				<tr>
 					<td>Logradouro:</td>
-					<td><input id="logradouro" type="text" name="txtLogradouro" size="40"  value="<%=(String)professor.getLogradouro()%>"/>
+					<td><input id="logradouro" type="text" name="txtLogradouro" size="40" class="form-control" value="<%=(String)professor.getLogradouro()%>"/>
 				</tr>
 				<tr>
 					<td>Número:</td>
-					<td><input id="numero" type="text" name="txtNumero" value="<%=(String)professor.getNumero()%>"/>
+					<td><input id="numero" type="text" name="txtNumero" class="form-control" value="<%=(String)professor.getNumero()%>"/>
 				</tr>
 				<tr>
 					<td>CEP:</td>
-					<td><input id="cep" type="text" name="txtCep" size="20" value="<%=(String)professor.getCep()%>"/></td>
+					<td><input id="cep" type="text" name="txtCep" size="20" class="form-control" value="<%=(String)professor.getCep()%>"/></td>
 				</tr>
 				<tr>
 					<td>Bairro:</td>
-					<td><input id="bairro" type="text" name="txtBairro" value="<%=(String)professor.getBairro()%>"/>
+					<td><input id="bairro" type="text" name="txtBairro" class="form-control" value="<%=(String)professor.getBairro()%>"/>
 				</tr>
 				<tr>
 					<td>Cidade:</td>
-					<td><input id="cidade" type="text" name="txtCidade" value="<%=(String)professor.getCidade()%>"/>
+					<td><input id="cidade" type="text" name="txtCidade" class="form-control" value="<%=(String)professor.getCidade()%>"/>
 				</tr>
 				<tr>
 					<td>Estado:</td>
@@ -154,23 +153,23 @@
 				</tr>
 				<tr>
 					<td>Telefone:</td>
-					<td><input id="telefone" type="text" name="txtTelefone"  value="<%=(String)professor.getTelefone()%>"/>
+					<td><input id="telefone" type="text" name="txtTelefone" class="form-control" value="<%=(String)professor.getTelefone()%>"/>
 				</tr>
 				<tr>
 					<td>Celular:</td>
-					<td><input id="celular" type="text" name="txtCelular"  value="<%=(String)professor.getCelular()%>"/>
+					<td><input id="celular" type="text" name="txtCelular" class="form-control" value="<%=(String)professor.getCelular()%>"/>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input id="email" type="text" name="txtEmail" size="40"  value="<%=(String)professor.getEmail()%>"/>
+					<td><input id="email" type="text" name="txtEmail" size="40" class="form-control" value="<%=(String)professor.getEmail()%>"/>
 				</tr>
 				<tr>
 					<td>Login</td>
-					<td><input id="login" type="text" name="txtLogin"/>
+					<td><input id="login" type="text" name="txtLogin" class="form-control" />
 				</tr>
 				<tr>
 					<td>Senha</td>
-					<td><input id="senha" type="password" name="txtSenha"/>
+					<td><input id="senha" type="password" name="txtSenha" class="form-control"/>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><a href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
@@ -181,7 +180,7 @@
 					<td></td>
 				</tr>				
 				<tr>
-					<td colspan="2" align="center"><input type="submit" id="btnSalvar" name="btnSalvar" value="salvar"/>
+					<td colspan="2" align="center"><input type="submit" id="btnSalvar" name="btnSalvar" value="salvar" class="btn btn-primary"/>
 				</tr>
 			</table>
 		</form>
