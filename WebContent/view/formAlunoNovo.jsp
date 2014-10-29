@@ -11,6 +11,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/Projeto_LabEngSoft/CSS/formato.css">
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <title>Formulário de Aluno</title>
 </head>
 <body>

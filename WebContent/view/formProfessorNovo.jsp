@@ -21,7 +21,7 @@
 		<h1>Novo Professor</h1>
 
 	<div align="center">
-		<form name="formAluno" action="/Projeto_LabEngSoft/ProfessorController" method="POST">
+		<form name="formProfessor" action="/Projeto_LabEngSoft/ProfessorController" method="POST">
 			<table>
 				<tr>
 					<td>Matrícula:</td>
@@ -38,7 +38,7 @@
 				<tr>
 					<td>Sexo:</td>
 					<td>
-						<select id="sexo" name="cbSexo">
+						<select id="sexo" name="cbSexo" class="form-control">
 							<option value="Masculino">Masculino</option>
 							<option value="Feminino">Feminino</option>
 						</select>
@@ -71,7 +71,7 @@
 				<tr>
 					<td>Estado:</td>
 					<td>
-						<select id="estado" name="cbEstado"/>
+						<select id="estado" name="cbEstado" class="form-control"/>
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>
 								<option value="<%= estado %>"><%= estado %></option>
@@ -103,15 +103,11 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><a href="/Projeto_LabEngSoft/view/listaProfessores.jsp" class="btn btn-danger">Cancelar</td>
+					<td colspan="2" align="center"></td>
 				</tr>	
-				<tr>
-					<td></td>
-				</tr>			
-				<tr>
-					<td colspan="2" align="center"><input class="btn btn-primary" type="submit" name="btnSalvar" value="salvar"/>
-				</tr>
-			</table>
+			</table><br>
+			<a href="/Projeto_LabEngSoft/view/listaProfessores.jsp" class="btn btn-danger">Cancelar</a>
+			<input class="btn btn-primary" type="submit" name="btnSalvar" value="salvar"/>
 		</form>
 	</div>
 	</div>

@@ -9,6 +9,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/Projeto_LabEngSoft/CSS/formato.css">
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <title>Lista de Professores</title>
 </head>
 <body>
@@ -29,12 +31,12 @@
 		<br>
 		
 		<div align="center">
-		<form name="pesquisarAluno" action="/Projeto_LabEngSoft/AlunoController" method="POST">
+		<form name="pesquisarAluno" action="/Projeto_LabEngSoft/ProfessorController" method="POST">
 			<table>
 				<tr>
 					<td><label>Pesquisar:</label></td>
 					<td><input type="input" id="txtPesquisa" name="txtPesquisar" size="50" class="form-control"/></td>
-					<td><input type="submit" name="btnPesquisar" value="Pesquisar" class="btn btn-success"/></td>
+					<td>&nbsp;<input type="submit" name="btnPesquisar" value="Pesquisar" class="btn btn-success"/></td>
 				</tr>
 			</table>
 		</form>
@@ -50,7 +52,7 @@
 				%>
 				<tr>
 					<td style="width: 200px;"><%=professor.getNome()%></td>
-					<td><a class="btn btn-info" href="/Projeto_LabEngSoft/AlunoController?funcao=mostrar&professorMatricula=<%=professor.getMatricula()%>">Mostrar</a></td>
+					<td><a class="btn btn-info" href="/Projeto_LabEngSoft/ProfessorController?funcao=mostrar&professorMatricula=<%=professor.getMatricula()%>">Mostrar</a></td>
 				</tr>
 				<%
 					}
@@ -58,7 +60,7 @@
 				%>
 			</table>
 			<p>
-				<a class="btn btn-primary" href="/Projeto_LabEngSoft/view/formProfessorNovo.jsp">Novo professor</a> &nbsp; <a href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
+				<a class="btn btn-primary" href="/Projeto_LabEngSoft/view/formProfessorNovo.jsp">Novo professor</a> &nbsp; <a class="btn btn-default" href="/Projeto_LabEngSoft/view/menu.jsp">Menu</a>
 			</p>
 			<br>
 		</div>
