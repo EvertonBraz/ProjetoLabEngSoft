@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="/Projeto_LabEngSoft/CSS/formato.css">
-<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <title>Formulário de Professor</title>
 <mtw:inputMaskConfig />
 </head>
@@ -111,11 +111,7 @@
 					<td>Sexo:</td>
 					<% String sexo = LerCampos.lerSexo(professor.getSexo()); %>
 					<td>
-<<<<<<< HEAD
 						<select id="sexo" name="cbSexo" class="form-control">
-=======
-						<select id="sexo" name="cbSexo">
->>>>>>> origin/master
 							<option <%=LerCampos.sexoSelecionado("Masculino", sexo)%> value="Masculino">Masculino</option>
 							<option <%=LerCampos.sexoSelecionado("Feminino", sexo)%> value="Feminino">Feminino</option>
 						</select>
@@ -148,11 +144,7 @@
 				<tr>
 					<td>Estado:</td>
 					<td>
-<<<<<<< HEAD
 						<select id="estado" name="cbEstado" class="form-control"/>
-=======
-						<select id="estado" name="cbEstado"/>
->>>>>>> origin/master
 							<% String estadoConsultado = professor.getEstado(); %>
 							<% String[] estados = EstadosBrasileiros.estados(); %>
 							<% for (String estado : estados){ %>
@@ -181,18 +173,13 @@
 					<td>Senha</td>
 					<td><input id="senha" type="password" name="txtSenha" class="form-control"/>
 				</tr>
-				<tr>
-					<td colspan="2" align="center"><a href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
-					<a href="/Projeto_LabEngSoft/ProfessorController?funcao=excluir&alunoRa=<%=request.getParameter("professorMatricula")%>">Excluir</a>&nbsp;
-					<a href="/Projeto_LabEngSoft/view/listaProfessores.jsp">Lista</a></td>
-				</tr>
-				<tr>
-					<td></td>
-				</tr>				
-				<tr>
-					<td colspan="2" align="center"><input type="submit" id="btnSalvar" name="btnSalvar" value="salvar" class="btn btn-primary"/>
-				</tr>
-			</table>
+			</table><br>
+			<div align="center">
+			<a class="btn btn-primary" href="javascript:void(0)" onclick="habilitarCampos();">Editar</a>&nbsp;
+			<a class="btn btn-danger" href="/Projeto_LabEngSoft/ProfessorController?funcao=excluir&alunoRa=<%=request.getParameter("professorMatricula")%>">Excluir</a>&nbsp;
+			<a class="btn btn-default" href="/Projeto_LabEngSoft/view/listaProfessores.jsp">Lista</a>
+			</div>	<br>
+			<input type="submit" id="btnSalvar" name="btnSalvar" value="salvar" class="btn btn-primary"/>
 		</form>
 	</div>
 	</div>
