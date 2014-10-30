@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="/Projeto_LabEngSoft/CSS/formato.css">
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <title>Lista de Alunos</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
 	<jsp:include page="/view/cabecalho.jsp" />
