@@ -8,16 +8,19 @@
 </head>
 <body>
 	<jsp:include page="/view/cabecalho.jsp" />
-	<div id="principal">
-		<h1>Menu</h1>
-		<p>
-			<a href="listaAlunos.jsp">Alunos</a>
-		</p>
-		<br>
-		<p>
-			<a href="listaProfessores.jsp">Professores</a>
-		</p>
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="#">Title</a>
+	    <ul class="nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="listaAlunos.jsp">Alunos</a></li>
+	      <li><a href="listaProfessores.jsp">Professores</a></li>
+	    </ul>
+	  </div>
 	</div>
+	
+	
+	
 	<jsp:include page="/view/rodape.jsp"/>
 </body>
 </html>
